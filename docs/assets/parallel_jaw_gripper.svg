@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+
+<rect width="100%" height="100%" fill="white"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50" text-anchor="middle">Parallel Jaw Gripper Geometry</text>
+  
+  <!-- Object (Ellipse) -->
+  <ellipse cx="350" cy="280" rx="120" ry="80" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="285" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d" text-anchor="middle">Object</text>
+  
+  <!-- Gripper Body -->
+  <rect x="250" y="100" width="200" height="30" rx="5" fill="#3498db" filter="url(#shadow)"/>
+  <text x="350" y="120" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Gripper Palm</text>
+  
+  <!-- Left Finger -->
+  <rect x="260" y="130" width="20" height="100" rx="3" fill="#2980b9"/>
+  <text x="240" y="180" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50" text-anchor="end">Finger 1</text>
+  
+  <!-- Right Finger -->
+  <rect x="420" y="130" width="20" height="100" rx="3" fill="#2980b9"/>
+  <text x="460" y="180" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Finger 2</text>
+  
+  <!-- Contact Points -->
+  <circle cx="270" cy="220" r="8" fill="#e74c3c"/>
+  <text x="220" y="225" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c" text-anchor="end">c₁</text>
+  
+  <circle cx="430" cy="220" r="8" fill="#e74c3c"/>
+  <text x="480" y="225" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">c₂</text>
+  
+  <!-- Grasp Center -->
+  <circle cx="350" cy="220" r="6" fill="#27ae60"/>
+  <text x="350" y="250" font-family="Arial, sans-serif" font-size="11" fill="#27ae60" text-anchor="middle">Grasp Center (p)</text>
+  
+  <!-- Grasp Width Arrow -->
+  <line x1="270" y1="195" x2="430" y2="195" stroke="#9b59b6" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="270" y1="190" x2="270" y2="200" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="430" y1="190" x2="430" y2="200" stroke="#9b59b6" stroke-width="2"/>
+  <text x="350" y="188" font-family="Arial, sans-serif" font-size="11" fill="#9b59b6" text-anchor="middle">w (grasp width)</text>
+  
+  <!-- Approach Direction -->
+  <line x1="350" y1="60" x2="350" y2="95" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="350" y="55" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c" text-anchor="middle">Approach (x-axis)</text>
+  
+  <!-- Grasp Axis -->
+  <line x1="220" y1="220" x2="260" y2="220" stroke="#3498db" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <line x1="480" y1="220" x2="440" y2="220" stroke="#3498db" stroke-width="2"/>
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="11" fill="#3498db" text-anchor="end">Grasp Axis (y)</text>
+  
+  <!-- Depth indicator -->
+  <line x1="475" y1="115" x2="475" y2="220" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="470" y1="115" x2="480" y2="115" stroke="#27ae60" stroke-width="2"/>
+  <line x1="470" y1="220" x2="480" y2="220" stroke="#27ae60" stroke-width="2"/>
+  <text x="510" y="170" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">d (depth)</text>
+  
+  <!-- Coordinate Frame -->
+  <g transform="translate(100, 400)">
+    <text x="0" y="-30" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">Grasp Frame</text>
+    <!-- X axis (approach) -->
+    <line x1="0" y1="0" x2="0" y2="-50" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="10" y="-40" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">x</text>
+    <!-- Y axis (between jaws) -->
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#3498db" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="55" y="5" font-family="Arial, sans-serif" font-size="11" fill="#3498db">y</text>
+    <!-- Z axis (orthogonal) -->
+    <line x1="0" y1="0" x2="35" y2="35" stroke="#27ae60" stroke-width="3" marker-end="url(#arrow-green)"/>
+    <text x="40" y="45" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">z</text>
+    <circle cx="0" cy="0" r="3" fill="#2c3e50"/>
+  </g>
+  
+  <!-- Parameters Box -->
+  <rect x="470" y="320" width="210" height="160" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1" filter="url(#shadow)"/>
+  <text x="575" y="345" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">Grasp Parameters</text>
+  <line x1="480" y1="355" x2="670" y2="355" stroke="#ddd" stroke-width="1"/>
+  <text x="485" y="375" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• p ∈ ℝ³ : grasp center</text>
+  <text x="485" y="395" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• v ∈ ℝ³ : grasp axis (||v||=1)</text>
+  <text x="485" y="415" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• w ∈ ℝ⁺ : grasp width</text>
+  <text x="485" y="435" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• d ∈ ℝ⁺ : approach depth</text>
+  <text x="485" y="455" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• R ∈ SO(3) : orientation</text>
+  <text x="485" y="475" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• s ∈ [0,1] : quality score</text>
+  
+  <!-- Endpoints Formula -->
+  <rect x="20" y="320" width="220" height="80" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="1" filter="url(#shadow)"/>
+  <text x="130" y="345" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#856404" text-anchor="middle">Gripper Endpoints</text>
+  <text x="130" y="370" font-family="Arial, sans-serif" font-size="12" fill="#856404" text-anchor="middle">g₁ = p - (w/2)·v</text>
+  <text x="130" y="390" font-family="Arial, sans-serif" font-size="12" fill="#856404" text-anchor="middle">g₂ = p + (w/2)·v</text>
+</svg>

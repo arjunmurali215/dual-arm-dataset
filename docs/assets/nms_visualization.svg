@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<rect width="100%" height="100%" fill="white"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50" text-anchor="middle">Non-Maximum Suppression (NMS) for Grasps</text>
+  
+  <!-- Before NMS -->
+  <rect x="30" y="60" width="340" height="300" rx="10" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
+  <text x="200" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Before NMS</text>
+  
+  <!-- Object -->
+  <ellipse cx="200" cy="210" rx="100" ry="70" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+  
+  <!-- Dense grasps (many overlapping) -->
+  <g opacity="0.7">
+    <!-- Cluster 1 -->
+    <line x1="120" y1="160" x2="120" y2="220" stroke="#e74c3c" stroke-width="3"/>
+    <line x1="125" y1="162" x2="125" y2="222" stroke="#e74c3c" stroke-width="3"/>
+    <line x1="130" y1="158" x2="130" y2="218" stroke="#e74c3c" stroke-width="3"/>
+    <line x1="135" y1="165" x2="135" y2="225" stroke="#e74c3c" stroke-width="3"/>
+    <line x1="115" y1="163" x2="115" y2="223" stroke="#e74c3c" stroke-width="3"/>
+    
+    <!-- Cluster 2 -->
+    <line x1="200" y1="140" x2="200" y2="200" stroke="#3498db" stroke-width="3"/>
+    <line x1="205" y1="142" x2="205" y2="202" stroke="#3498db" stroke-width="3"/>
+    <line x1="195" y1="138" x2="195" y2="198" stroke="#3498db" stroke-width="3"/>
+    <line x1="210" y1="145" x2="210" y2="205" stroke="#3498db" stroke-width="3"/>
+    
+    <!-- Cluster 3 -->
+    <line x1="270" y1="170" x2="270" y2="230" stroke="#27ae60" stroke-width="3"/>
+    <line x1="275" y1="172" x2="275" y2="232" stroke="#27ae60" stroke-width="3"/>
+    <line x1="265" y1="168" x2="265" y2="228" stroke="#27ae60" stroke-width="3"/>
+    <line x1="280" y1="175" x2="280" y2="235" stroke="#27ae60" stroke-width="3"/>
+    <line x1="260" y1="173" x2="260" y2="233" stroke="#27ae60" stroke-width="3"/>
+    <line x1="285" y1="169" x2="285" y2="229" stroke="#27ae60" stroke-width="3"/>
+  </g>
+  
+  <text x="200" y="300" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" text-anchor="middle">Many redundant, overlapping grasps</text>
+  <text x="200" y="315" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c" text-anchor="middle" font-weight="bold">N grasps</text>
+  
+  <!-- Arrow -->
+  <line x1="380" y1="200" x2="430" y2="200" stroke="#2c3e50" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="405" y="185" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50" text-anchor="middle">NMS</text>
+  
+  <!-- After NMS -->
+  <rect x="430" y="60" width="340" height="300" rx="10" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
+  <text x="600" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">After NMS</text>
+  
+  <!-- Object -->
+  <ellipse cx="600" cy="210" rx="100" ry="70" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+  
+  <!-- Sparse grasps (best from each cluster) -->
+  <line x1="523" y1="162" x2="523" y2="222" stroke="#e74c3c" stroke-width="4"/>
+  <circle cx="523" cy="162" r="4" fill="#e74c3c"/>
+  <text x="508" y="155" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">best</text>
+  
+  <line x1="600" y1="140" x2="600" y2="200" stroke="#3498db" stroke-width="4"/>
+  <circle cx="600" cy="140" r="4" fill="#3498db"/>
+  <text x="615" y="138" font-family="Arial, sans-serif" font-size="9" fill="#3498db">best</text>
+  
+  <line x1="672" y1="170" x2="672" y2="230" stroke="#27ae60" stroke-width="4"/>
+  <circle cx="672" cy="170" r="4" fill="#27ae60"/>
+  <text x="687" y="168" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">best</text>
+  
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" text-anchor="middle">Diverse, high-quality grasps</text>
+  <text x="600" y="315" font-family="Arial, sans-serif" font-size="12" fill="#27ae60" text-anchor="middle" font-weight="bold">n &lt;&lt; N grasps</text>
+  
+  <!-- NMS Criteria Box -->
+  <rect x="250" y="335" width="300" height="55" rx="5" fill="#fff3cd" stroke="#f39c12" stroke-width="1" filter="url(#shadow)"/>
+  <text x="400" y="355" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#856404" text-anchor="middle">NMS Parameters</text>
+  <text x="400" y="375" font-family="Arial, sans-serif" font-size="10" fill="#856404" text-anchor="middle">Translation threshold: τ_t = 0.03m, Rotation threshold: τ_r = 30°</text>
+</svg>
