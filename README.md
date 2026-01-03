@@ -227,18 +227,6 @@ else:
     print(f"Not force closure. Loss: {loss:.6f}")
 ```
 
-## Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@article{dual-arm-grasps-2025,
-  title={Dual-Arm Grasp Dataset Generator},
-  author={Your Name},
-  year={2025}
-}
-```
-
 ## Related Datasets
 
 - [GraspNet-1Billion](https://graspnet.net/) - Single-arm grasp dataset
