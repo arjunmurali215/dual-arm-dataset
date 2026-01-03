@@ -227,12 +227,6 @@ else:
     print(f"Not force closure. Loss: {loss:.6f}")
 ```
 
-## Performance
-
-- Processing time: ~2-5 minutes per scene (depending on object count)
-- Typical output: 50-200 verified grasp pairs per scene
-- Force closure success rate: ~40-60% of candidate pairs
-
 ## Citation
 
 If you use this code in your research, please cite:
